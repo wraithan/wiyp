@@ -65,7 +65,7 @@ def install_requirements():
 def start_gunicorn():
     with cd(deploy_dir):
         virtualenv_run('gunicorn_django --pid=' + deploy_dir +
-                       '/gunicorn.pid --workers=8 -b 127.0.0.1:8003 --daemon deploy_settings.py')
+                       '/gunicorn.pid --workers=2 -b 127.0.0.1:8003 --daemon deploy_settings.py')
 
 def stop_gunicorn():
     with cd(deploy_dir):
@@ -79,7 +79,7 @@ def install_nginx_conf():
 
 def enable_nginx_conf():
     sudo('ln -s /etc/nginx/sites-available/wiyp.conf'
-         '/etc/nginx/sites-enabled/wiyp.conf')
+         ' /etc/nginx/sites-enabled/wiyp.conf')
 
 
 def reload_nginx_conf():
