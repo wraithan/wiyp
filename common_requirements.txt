@@ -1,4 +1,5 @@
 Django
+South
 Fabric==0.9.3
 paramiko==1.7.6
 pycrypto==2.3
