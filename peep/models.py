@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+class Peep(models.Model):
+    address = models.ForeignKey('addresses.Address')
+    name = models.CharField(max_length=256)
+    description = models.TextField()
+
+    
