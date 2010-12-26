@@ -10,9 +10,6 @@ class Address(models.Model):
     postal_code = models.CharField(max_length=30, blank=True, null=True)
     country = models.ForeignKey('Country', blank=True, null=True)
 
-    class Meta:
-        abstract = True
-
     @property
     def state_or_province(self):
         return self.state or self.province
